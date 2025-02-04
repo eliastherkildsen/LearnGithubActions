@@ -1,4 +1,4 @@
-﻿name: Devops Dummy Pipeline
+﻿name: Devops First Pipeline
 
 on:
   push:
