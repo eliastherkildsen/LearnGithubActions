@@ -1,0 +1,24 @@
+﻿name: Devops Dummy Pipeline
+
+on:
+  push:
+    - main 
+
+jobs: 
+  integration: 
+    runs-on: ubuntu-latest
+    
+    steps: 
+      - name: Checkout code
+        uses: actions/checkout@v4
+        
+      - name: Print Hello World
+        run: |
+          echo "Hello World" 
+          echo "Well, Hi!" >> hi.txt
+      
+      - name: Collect artifact
+        uses: actions/upload-artifact@v4 
+        with:
+          name: hi-file
+          path: hi.txt
